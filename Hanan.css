@@ -1,0 +1,44 @@
+body{
+
+background-color:silver;
+
+} 
+#header{
+
+background-color:#4abdb5;
+
+margin:20px 30px 30px 30px;
+
+}
+
+h1{
+
+font-family:Times New Roman;
+color:white;
+font-weight:bold;
+
+}
+
+p{
+
+text-align: center;
+
+padding-bottom:10px;
+font-weight:bold;
+color:white;
+}
+.STOP{
+
+color:red;
+font-weight:bold;
+
+}
+button { 
+width:150px; 
+      height:40px;
+	  font-family:Times New Roman;
+	  font-weight:bold;
+
+
+}
+
