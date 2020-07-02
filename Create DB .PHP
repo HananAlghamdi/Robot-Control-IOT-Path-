@@ -1,3 +1,4 @@
+
 <?php
 	
 	$conn=mysqli_connect("localhost","root","");
@@ -20,15 +21,16 @@
 	}
 
     
-$createTable = "CREATE TABLE controller (
+$sql = "CREATE TABLE controller (
 			Id integer NOT NULL PRIMARY KEY,
-			forward VARCHAR(30),
-			backward VARCHAR(30),
-			left VARCHAR(30),
-			right VARCHAR(30),
-			stop VARCHAR(30),
+			F VARCHAR(30),
+			B VARCHAR(40),
+			L VARCHAR(40), 
+			R VARCHAR(40), 
+			S VARCHAR(40)
 			)";
-	if ($conn->query($createTable) == TRUE) 
+			
+	if ($conn->query($sql) == TRUE) 
 	{
 		echo "<BR>"."controller Table has been created successfully";
 	} 
