@@ -1,0 +1,71 @@
+
+<html>
+<head>
+	<title>Insert into Database</title>
+</head>
+<body>
+
+<h2>Insert into controller Table </h2>
+
+
+    <table>
+	 
+	  
+	  <tr>
+	    <td>Forward: </td>
+		<td><input type = "text" name = "Forward" size="15" ></td>
+	 </tr>
+	  <tr>
+	    <td>Backward: </td>
+		<td><input type = "text" name = "Backward" size="15"></td>
+	 </tr>
+	  <tr>
+	    <td>Left: </td>
+		<td><input type = "text" name = "Left" size="15"></td>
+	 </tr>
+	 <tr>
+	    <td>Right: </td>
+		<td><input type = "text" name = "Right" size="15" ></td>
+	 </tr>
+	   
+	 
+	 
+	</table><BR>
+	<input type = "submit" value="Submit" name="submit"/> 
+	<input type = "submit" value="Clear"/><BR>
+</form>
+<?php
+
+
+ if(isset($_POST["submit"]))
+	{
+		
+		$Forward=$_POST['Forward'];
+		$Backward=$_POST['Backward'];
+		$Left=$_POST['Left'];
+		$Right=$_POST['Right'];
+		{
+		 $conn=mysqli_connect("localhost","root","","hanangh");
+         if (empty($conn))
+		 {
+			 die(" connection failed:". mysqli_connect_errno());
+		 
+		 }
+		 
+		 print ("conected to the Database");
+
+		$sql="INSERT INTO controller123 values('$Forward','$Backward','$Left','$Right')";
+
+	
+			if ($conn->query($sql) == TRUE) 
+			{
+				echo "<BR>"."1 record has been added";
+			} 
+			else 
+			{
+				echo "<BR>"."Error inserting record: " . $conn->error;
+			}
+			mysqli_close($conn);
+		
+	}
+	}
